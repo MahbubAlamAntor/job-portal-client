@@ -9,6 +9,8 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li className="ml-2"><NavLink to='/myApplication'>My Application</NavLink></li>
+        <li className="ml-2"><NavLink to='/addJob'>Add Job</NavLink></li>
+        <li className="ml-2"><NavLink to='/myPostedJobs'>My Post Job</NavLink></li>
     </>
     const handleSignOutBtn = () => {
         signOutUser()
