@@ -8,7 +8,7 @@ const Navbar = () => {
     const { user,signOutUser } = useContext(AuthContext);
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li className="ml-2"><NavLink to='/'>About</NavLink></li>
+        <li className="ml-2"><NavLink to='/myApplication'>My Application</NavLink></li>
     </>
     const handleSignOutBtn = () => {
         signOutUser()

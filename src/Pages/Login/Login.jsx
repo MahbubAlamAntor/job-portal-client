@@ -3,9 +3,16 @@ import { toast, ToastContainer } from "react-toastify";
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import Lottie from "lottie-react";
 import loginInLottie from '../../assets/login.json';
+import SocialLogin from "../Shared/SocialLogin";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const {signInUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.pathname || '/';
+    console.log(location)
+    // console.log(pathname)
     const handleLoginBtn = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -22,6 +29,7 @@ const Login = () => {
                 console.log(result.user)
                 toast.success('Successfully Login')
                 form.reset();
+                navigate(from)
             })
             .catch(error => {
                 console.log(error.message)
@@ -53,6 +61,9 @@ const Login = () => {
                             <ToastContainer />
                         </div>
                     </form>
+                    <div>
+                        <SocialLogin></SocialLogin>
+                    </div>
                 </div>
             </div>
         </div>

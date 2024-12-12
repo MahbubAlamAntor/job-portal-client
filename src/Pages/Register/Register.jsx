@@ -4,6 +4,7 @@ import { useContext } from "react";
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import SocialLogin from "../Shared/SocialLogin";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -43,7 +44,7 @@ const Register = () => {
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left w-96">
+                <div className="text-center lg:text-left">
                     <Lottie animationData={registerLottie}></Lottie>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -66,6 +67,9 @@ const Register = () => {
                             <ToastContainer />
                         </div>
                     </form>
+                    <div>
+                        <SocialLogin></SocialLogin>
+                    </div>
                 </div>
             </div>
         </div>
