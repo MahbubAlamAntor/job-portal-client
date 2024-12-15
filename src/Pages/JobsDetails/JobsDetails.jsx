@@ -57,7 +57,7 @@ const JobsDetails = () => {
                 <div className="mb-6">
                     <h2 className="text-xl font-semibold text-gray-700 mb-2">Responsibilities</h2>
                     <ul className="list-disc pl-5 text-gray-600">
-                        {responsibilities.map((res, index) => (
+                        {responsibilities?.map((res, index) => (
                             <li key={index}>{res}</li>
                         ))}
                     </ul>
